@@ -4,7 +4,6 @@ import com.salesianos.dam.clinicflow.entities.Cita;
 import com.salesianos.dam.clinicflow.entities.Paciente;
 import com.salesianos.dam.clinicflow.entities.Profesional;
 import com.salesianos.dam.clinicflow.entities.extra.Estado;
-import org.springframework.cglib.core.Local;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -33,4 +32,7 @@ public interface CitaRepository extends JpaRepository<Cita, Long> {
     List<Cita> findByPacienteAndFechaHora(Paciente paciente, LocalDateTime fechaHora);
 
     List<Cita> findByEstado(Estado estado);
+
+    @EntityGraph(attributePaths = {"paciente"})
+    List<Cita> findByPaciente(Paciente paciente);
 }

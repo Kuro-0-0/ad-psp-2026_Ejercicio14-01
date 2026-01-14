@@ -1,9 +1,11 @@
 package com.salesianos.dam.clinicflow.services;
 
 import com.salesianos.dam.clinicflow.entities.Cita;
+import com.salesianos.dam.clinicflow.entities.Consulta;
 import com.salesianos.dam.clinicflow.entities.extra.Estado;
 import com.salesianos.dam.clinicflow.exceptions.AlreadyCanceledException;
 import com.salesianos.dam.clinicflow.exceptions.BadArgumentsException;
+import com.salesianos.dam.clinicflow.exceptions.WrongEstadoArgumentException;
 import com.salesianos.dam.clinicflow.exceptions.notFound.CitaNotFoundException;
 import com.salesianos.dam.clinicflow.repositories.CitaRepository;
 import lombok.RequiredArgsConstructor;
@@ -70,4 +72,16 @@ public class CitaService {
 
         return repository.save(cita);
     }
+
+    public Cita registrarConsulta(Long id, Consulta consulta) {
+        Cita c = repository.findById(id).orElseThrow(() -> new CitaNotFoundException(id));
+
+        if (c.getEstado() != Estado.PROGRAMADA) {
+            throw new WrongEstadoArgumentException("Solo se pueden registrar consultas en citas programadas.");
+        }
+
+        c.setConsulta(consulta);
+        c.setEstado(Estado.ATENDIDA);
+        return repository.save(c);
+    };
 }

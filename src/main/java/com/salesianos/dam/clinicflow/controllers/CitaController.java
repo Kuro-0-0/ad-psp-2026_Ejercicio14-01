@@ -5,6 +5,7 @@ import com.salesianos.dam.clinicflow.entities.Cita;
 import com.salesianos.dam.clinicflow.entities.extra.DTOs.cita.CitaRequestDTO;
 import com.salesianos.dam.clinicflow.entities.extra.DTOs.cita.CitaResponseDTO;
 import com.salesianos.dam.clinicflow.entities.extra.DTOs.cita.CreateCitaRequestDTO;
+import com.salesianos.dam.clinicflow.entities.extra.DTOs.consulta.CreateConsultaRequestDTO;
 import com.salesianos.dam.clinicflow.services.CitaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -59,5 +60,12 @@ public class CitaController {
         Cita citaCancelada = service.cancelarCita(id);
         return ResponseEntity.ok(CitaResponseDTO.to(citaCancelada));
     }
+
+    @PostMapping("/citas/{id}/consulta")
+    public ResponseEntity<CitaResponseDTO> registrarConsulta(@PathVariable Long id, CreateConsultaRequestDTO createConsultaRequest) {
+        Cita citaConConsulta = service.registrarConsulta(id, createConsultaRequest.from());
+        return ResponseEntity.ok(CitaResponseDTO.to(citaConConsulta));
+    }
+
 
 }
