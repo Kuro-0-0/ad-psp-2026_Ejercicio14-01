@@ -2,6 +2,7 @@ package com.salesianos.dam.clinicflow.services;
 
 import com.salesianos.dam.clinicflow.entities.Cita;
 import com.salesianos.dam.clinicflow.entities.extra.Estado;
+import com.salesianos.dam.clinicflow.exceptions.AlreadyCanceledException;
 import com.salesianos.dam.clinicflow.exceptions.BadArgumentsException;
 import com.salesianos.dam.clinicflow.exceptions.notFound.CitaNotFoundException;
 import com.salesianos.dam.clinicflow.repositories.CitaRepository;
@@ -64,6 +65,7 @@ public class CitaService {
         Cita cita = repository.findById(id).orElseThrow(() -> new CitaNotFoundException(id));
 
         if (cita.getEstado() == Estado.CANCELADA) {
+            throw new AlreadyCanceledException();
         }
 
         return repository.save(cita);
