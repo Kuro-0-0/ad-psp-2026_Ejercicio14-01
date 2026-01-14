@@ -1,10 +1,7 @@
 package com.salesianos.dam.clinicflow.entities;
 
 import com.salesianos.dam.clinicflow.entities.extra.Estado;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -32,4 +29,6 @@ public class Cita {
     private Paciente paciente;
     @ManyToOne
     private Profesional profesional;
+    @ManyToOne
+    private Consulta consulta;
 }
