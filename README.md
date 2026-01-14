@@ -11,28 +11,30 @@
 - F02.2 - Relacion Profesional - Citas (OneToMany - ManyToOne)
 - F02.2 - Relacion Cita - Consulta (ManyToOne - OneToMany)
 
-## F03 - Crear Servicios e Implementar reglas de negocio
-- F03.1 - Crear cita
-- F03.2 - Cancelar cita
-- F03.3 - Registrar consulta
+## F03 - Crear Repositorios
 
-## F04 - Implementar consultas personalizadas en Repositorisos
-- F04.1 - Citas por paciente
-- F04.2 - Citas por estado
-- F04.3 - Citas por rango de fechas
-- F04.4 - Agenda diara de un profesional + datos paciente. (USAR ENTITYGRAPH)
+## F04 - Crear Servicios e Implementar reglas de negocio
+- F04.1 - Crear cita
+- F04.2 - Cancelar cita
+- F04.3 - Registrar consulta
 
-## F05 - Crear DTOs
-- F05.1 - CitaListDto
-- F05.2 - CitaDetailDto
-- F05.3 - CreateCitaRequest
-- F05.4 - CreateConsultaRequest
+## F05 - Implementar consultas personalizadas en Repositorisos
+- F05.1 - Citas por paciente
+- F05.2 - Citas por estado
+- F05.3 - Citas por rango de fechas
+- F05.4 - Agenda diara de un profesional + datos paciente. (USAR ENTITYGRAPH)
 
-## F06 - Crear Controllers/EndPoints
-- F06.1 - POST /citas
-- F06.2 - PUT /citas/{id}/cancelar
-- F06.3 - POST /citas/{id}\consulta
-- F06.4 - GET /citas (paginado)
-- F06.5 - GET /pacientes/{id}/citas
+## F06 - Crear DTOs
+- F06.1 - CitaListDto
+- F06.2 - CitaDetailDto
+- F06.3 - CreateCitaRequest
+- F06.4 - CreateConsultaRequest
+
+## F07 - Crear Controllers/EndPoints
+- F07.1 - POST /citas
+- F07.2 - PUT /citas/{id}/cancelar
+- F07.3 - POST /citas/{id}\consulta
+- F07.4 - GET /citas (paginado)
+- F07.5 - GET /pacientes/{id}/citas
 
 #### By Pablo Garcia Maria
