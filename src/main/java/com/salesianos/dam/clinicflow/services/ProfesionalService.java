@@ -1,7 +1,7 @@
 package com.salesianos.dam.clinicflow.services;
 
 import com.salesianos.dam.clinicflow.entities.Profesional;
-import com.salesianos.dam.clinicflow.exceptions.notFound.ProfesionalNotFound;
+import com.salesianos.dam.clinicflow.exceptions.notFound.ProfesionalNotFoundException;
 import com.salesianos.dam.clinicflow.repositories.ProfesionalRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -21,16 +21,16 @@ public class ProfesionalService {
     }
 
     public Profesional read(Long id) {
-        return repository.findById(id).orElseThrow(() -> new ProfesionalNotFound(id));
+        return repository.findById(id).orElseThrow(() -> new ProfesionalNotFoundException(id));
     }
 
     public Profesional update(Long id, Profesional p) {
-        Profesional pOriginal = repository.findById(id).orElseThrow(() -> new ProfesionalNotFound(id));;
+        Profesional pOriginal = repository.findById(id).orElseThrow(() -> new ProfesionalNotFoundException(id));;
         return repository.save(pOriginal.modify(p));
     }
 
     public void delete(Long id) {
-        Profesional p = repository.findById(id).orElseThrow(() -> new ProfesionalNotFound(id));
+        Profesional p = repository.findById(id).orElseThrow(() -> new ProfesionalNotFoundException(id));
         repository.delete(p);
     }
 
