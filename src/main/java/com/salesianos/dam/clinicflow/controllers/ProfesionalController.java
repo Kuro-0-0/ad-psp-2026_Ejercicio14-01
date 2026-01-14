@@ -14,7 +14,7 @@ import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/profesional")
+@RequestMapping("/profesionales")
 public class ProfesionalController {
 
     private final ProfesionalService service;

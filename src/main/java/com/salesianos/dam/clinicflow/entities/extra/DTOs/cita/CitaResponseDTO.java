@@ -4,6 +4,7 @@ import com.salesianos.dam.clinicflow.entities.Cita;
 import com.salesianos.dam.clinicflow.entities.Consulta;
 import com.salesianos.dam.clinicflow.entities.Paciente;
 import com.salesianos.dam.clinicflow.entities.Profesional;
+import com.salesianos.dam.clinicflow.entities.extra.DTOs.consulta.ConsultaResponseDTO;
 import com.salesianos.dam.clinicflow.entities.extra.DTOs.paciente.PacienteResponseDTO;
 import com.salesianos.dam.clinicflow.entities.extra.DTOs.profesional.ProfesionalResponseDTO;
 
