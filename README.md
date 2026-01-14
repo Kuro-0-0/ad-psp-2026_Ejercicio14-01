@@ -13,28 +13,40 @@
 
 ## F03 - Crear Repositorios
 
-## F04 - Crear Servicios e Implementar reglas de negocio
-- F04.1 - Crear cita
-- F04.2 - Cancelar cita
-- F04.3 - Registrar consulta
+## F04 - Crear Servicios CRUD basicos
+- F04.1 - Servicio Paciente
+- F04.2 - Servicio Profesional
+- F04.3 - Servicio Cita
+- F04.4 - Servicio Consulta
 
-## F05 - Implementar consultas personalizadas en Repositorisos
-- F05.1 - Citas por paciente
-- F05.2 - Citas por estado
-- F05.3 - Citas por rango de fechas
-- F05.4 - Agenda diara de un profesional + datos paciente. (USAR ENTITYGRAPH)
+## F05 - Crear Controllers CRUD basicos
+- F05.1 - Controller Paciente
+- F05.2 - Controller Profesional
+- F05.3 - Controller Cita
+- F05.4 - Controller Consulta
 
-## F06 - Crear DTOs
-- F06.1 - CitaListDto
-- F06.2 - CitaDetailDto
-- F06.3 - CreateCitaRequest
-- F06.4 - CreateConsultaRequest
+## F06 - Crear e Implementar reglas de negocio
+- F06.1 - Crear cita
+- F06.2 - Cancelar cita
+- F06.3 - Registrar consulta
 
-## F07 - Crear Controllers/EndPoints
-- F07.1 - POST /citas
-- F07.2 - PUT /citas/{id}/cancelar
-- F07.3 - POST /citas/{id}\consulta
-- F07.4 - GET /citas (paginado)
-- F07.5 - GET /pacientes/{id}/citas
+## F07 - Implementar consultas personalizadas en Repositorisos
+- F07.1 - Citas por paciente
+- F07.2 - Citas por estado
+- F07.3 - Citas por rango de fechas
+- F07.4 - Agenda diaria de un profesional + datos paciente. (USAR ENTITYGRAPH)
+
+## F08 - Crear DTOs
+- F08.1 - CitaListDto
+- F08.2 - CitaDetailDto
+- F08.3 - CreateCitaRequest
+- F08.4 - CreateConsultaRequest
+
+## F09 - Crear Controllers/EndPoints
+- F09.1 - POST /citas
+- F09.2 - PUT /citas/{id}/cancelar
+- F09.3 - POST /citas/{id}\consulta
+- F09.4 - GET /citas (paginado)
+- F09.5 - GET /pacientes/{id}/citas
 
 #### By Pablo Garcia Maria

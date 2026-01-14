@@ -27,4 +27,12 @@ public class Paciente {
     private String email;
     private LocalDate fechaNacimiento;
 
+    public Paciente modify(Paciente p) {
+        return Paciente.builder()
+                .id(this.id)
+                .nombre(p.getNombre())
+                .email(p.getEmail())
+                .fechaNacimiento(p.getFechaNacimiento())
+                .build();
+    }
 }
