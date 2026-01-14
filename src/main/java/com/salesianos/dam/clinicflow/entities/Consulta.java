@@ -1,4 +1,4 @@
-package com.salesianos.dam.clinicflow.entities.extra;
+package com.salesianos.dam.clinicflow.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
