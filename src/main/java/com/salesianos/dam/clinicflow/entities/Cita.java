@@ -30,4 +30,6 @@ public class Cita {
 
     @ManyToOne
     private Paciente paciente;
+    @ManyToOne
+    private Profesional profesional;
 }
