@@ -54,4 +54,10 @@ public class CitaController {
         );
     }
 
+    @PutMapping("/citas/{id}/cancelar")
+    public ResponseEntity<CitaResponseDTO> cancelarCita(@PathVariable Long id) {
+        Cita citaCancelada = service.cancelarCita(id);
+        return ResponseEntity.ok(CitaResponseDTO.to(citaCancelada));
+    }
+
 }
