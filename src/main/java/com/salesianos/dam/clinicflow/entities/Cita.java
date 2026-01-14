@@ -31,4 +31,15 @@ public class Cita {
     private Profesional profesional;
     @ManyToOne
     private Consulta consulta;
+
+    public Cita modify(Cita c) {
+        return Cita.builder()
+                .id(this.id)
+                .fechaHora(c.getFechaHora())
+                .estado(c.getEstado())
+                .paciente(c.getPaciente())
+                .profesional(c.getProfesional())
+                .consulta(c.getConsulta())
+                .build();
+    }
 }
