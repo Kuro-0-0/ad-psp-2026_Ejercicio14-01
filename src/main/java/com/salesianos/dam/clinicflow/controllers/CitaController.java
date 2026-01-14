@@ -14,7 +14,7 @@ import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/cita")
+@RequestMapping("/citas")
 public class CitaController {
 
     private final CitaService service;
