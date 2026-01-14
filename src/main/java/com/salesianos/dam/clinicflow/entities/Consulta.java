@@ -27,4 +27,12 @@ public class Consulta {
     private String diagnostico;
     private LocalDate fecha;
 
+    public Consulta modify(Consulta c) {
+        return Consulta.builder()
+                .id(this.id)
+                .observaciones(c.getObservaciones())
+                .diagnostico(c.getDiagnostico())
+                .fecha(c.getFecha())
+                .build();
+    }
 }
