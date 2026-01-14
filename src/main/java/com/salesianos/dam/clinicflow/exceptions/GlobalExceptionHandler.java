@@ -21,5 +21,15 @@ public class GlobalExceptionHandler {
         return pd;
     }
 
+    @ExceptionHandler(BadArgumentsException.class)
+    public ProblemDetail handleBadArgumentsException(BadArgumentsException ex) {
+        ProblemDetail pd = ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, ex.getMessage());
+
+        pd.setTitle("Argumentos inválidos");
+        pd.setType(URI.create("about:blank"));
+
+        return pd;
+    }
+
 
 }
