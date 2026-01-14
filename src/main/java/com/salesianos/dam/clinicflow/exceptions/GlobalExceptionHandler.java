@@ -1,6 +1,7 @@
 package com.salesianos.dam.clinicflow.exceptions;
 
 import com.salesianos.dam.clinicflow.exceptions.notFound.NotFoundException;
+import org.springframework.beans.factory.parsing.Problem;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -26,6 +27,16 @@ public class GlobalExceptionHandler {
         ProblemDetail pd = ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, ex.getMessage());
 
         pd.setTitle("Argumentos inválidos");
+        pd.setType(URI.create("about:blank"));
+
+        return pd;
+    }
+
+    @ExceptionHandler(WrongEstadoArgumentException.class)
+    public ProblemDetail handleWrongEstadoArgumentException(WrongEstadoArgumentException ex) {
+        ProblemDetail pd = ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, ex.getMessage());
+
+        pd.setTitle("Estado inválido");
         pd.setType(URI.create("about:blank"));
 
         return pd;
