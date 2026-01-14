@@ -2,7 +2,6 @@ package com.salesianos.dam.clinicflow.services;
 
 import com.salesianos.dam.clinicflow.entities.Profesional;
 import com.salesianos.dam.clinicflow.exceptions.notFound.ProfesionalNotFound;
-import com.salesianos.dam.clinicflow.exceptions.notFound.ProfesionalNotFoundException;
 import com.salesianos.dam.clinicflow.repositories.ProfesionalRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
