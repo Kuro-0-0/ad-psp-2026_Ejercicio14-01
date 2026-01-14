@@ -1,7 +1,7 @@
 package com.salesianos.dam.clinicflow.services;
 
 import com.salesianos.dam.clinicflow.entities.Paciente;
-import com.salesianos.dam.clinicflow.exceptions.notFound.PacienteNotFoundException;
+import com.salesianos.dam.clinicflow.exceptions.notFound.PacienteNotFound;
 import com.salesianos.dam.clinicflow.repositories.PacienteRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -21,16 +21,16 @@ public class PacienteService {
     }
 
     public Paciente read(Long id) {
-        return repository.findById(id).orElseThrow(() -> new PacienteNotFoundException(id));
+        return repository.findById(id).orElseThrow(() -> new PacienteNotFound(id));
     }
 
     public Paciente update(Long id, Paciente p) {
-        Paciente pOriginal = repository.findById(id).orElseThrow(() -> new PacienteNotFoundException(id));;
+        Paciente pOriginal = repository.findById(id).orElseThrow(() -> new PacienteNotFound(id));;
         return repository.save(pOriginal.modify(p));
     }
 
     public void delete(Long id) {
-        Paciente p = repository.findById(id).orElseThrow(() -> new PacienteNotFoundException(id));
+        Paciente p = repository.findById(id).orElseThrow(() -> new PacienteNotFound(id));
         repository.delete(p);
     }
 

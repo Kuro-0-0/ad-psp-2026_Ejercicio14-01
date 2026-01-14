@@ -9,7 +9,7 @@ import lombok.*;
 @AllArgsConstructor @NoArgsConstructor
 @ToString @Getter @Setter
 @Builder
-public class Profesional {  
+public class Profesional {
 
     /*
     * id
@@ -23,4 +23,11 @@ public class Profesional {
     private String nombre;
     private String especialidad;
 
+    public Profesional modify(Profesional p) {
+        return Profesional.builder()
+                .id(this.id)
+                .nombre(p.getNombre())
+                .especialidad(p.getEspecialidad())
+                .build();
+    }
 }
