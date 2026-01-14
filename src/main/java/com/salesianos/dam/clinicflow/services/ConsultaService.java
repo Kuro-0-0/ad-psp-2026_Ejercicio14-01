@@ -1,7 +1,7 @@
 package com.salesianos.dam.clinicflow.services;
 
 import com.salesianos.dam.clinicflow.entities.Consulta;
-import com.salesianos.dam.clinicflow.exceptions.notFound.ConsultaNotFound;
+import com.salesianos.dam.clinicflow.exceptions.notFound.ConsultaNotFoundException;
 import com.salesianos.dam.clinicflow.repositories.ConsultaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -21,16 +21,16 @@ public class ConsultaService {
     }
 
     public Consulta read(Long id) {
-        return repository.findById(id).orElseThrow(() -> new ConsultaNotFound(id));
+        return repository.findById(id).orElseThrow(() -> new ConsultaNotFoundException(id));
     }
 
     public Consulta update(Long id, Consulta c) {
-        Consulta cOriginal = repository.findById(id).orElseThrow(() -> new ConsultaNotFound(id));;
+        Consulta cOriginal = repository.findById(id).orElseThrow(() -> new ConsultaNotFoundException(id));;
         return repository.save(cOriginal.modify(c));
     }
 
     public void delete(Long id) {
-        Consulta c = repository.findById(id).orElseThrow(() -> new ConsultaNotFound(id));
+        Consulta c = repository.findById(id).orElseThrow(() -> new ConsultaNotFoundException(id));
         repository.delete(c);
     }
 
