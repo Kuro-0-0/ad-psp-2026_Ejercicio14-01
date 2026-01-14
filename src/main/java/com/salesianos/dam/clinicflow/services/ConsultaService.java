@@ -1,5 +1,6 @@
 package com.salesianos.dam.clinicflow.services;
 
+import com.salesianos.dam.clinicflow.entities.Cita;
 import com.salesianos.dam.clinicflow.entities.Consulta;
 import com.salesianos.dam.clinicflow.exceptions.notFound.ConsultaNotFoundException;
 import com.salesianos.dam.clinicflow.repositories.ConsultaRepository;
@@ -38,5 +39,4 @@ public class ConsultaService {
     public List<Consulta> getAll() {
         return repository.findAll();
     }
-
 }

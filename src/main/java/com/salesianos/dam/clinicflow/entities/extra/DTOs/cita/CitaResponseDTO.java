@@ -10,19 +10,13 @@ import com.salesianos.dam.clinicflow.entities.extra.DTOs.profesional.Profesional
 
 public record CitaResponseDTO(
         String fechaHora,
-        String estado,
-        ProfesionalResponseDTO profesional,
-        PacienteResponseDTO paciente,
-        ConsultaResponseDTO consulta
+        String estado
 ) {
 
     public static CitaResponseDTO to(Cita cita){
         return new CitaResponseDTO(
                 cita.getFechaHora().toString(),
-                cita.getEstado().name(),
-                ProfesionalResponseDTO.to(cita.getProfesional()),
-                PacienteResponseDTO.to(cita.getPaciente()),
-                ConsultaResponseDTO.to(cita.getConsulta())
+                cita.getEstado().name()
         );
     }
 
