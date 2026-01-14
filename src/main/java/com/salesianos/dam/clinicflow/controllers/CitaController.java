@@ -4,6 +4,7 @@ package com.salesianos.dam.clinicflow.controllers;
 import com.salesianos.dam.clinicflow.entities.Cita;
 import com.salesianos.dam.clinicflow.entities.extra.DTOs.cita.CitaRequestDTO;
 import com.salesianos.dam.clinicflow.entities.extra.DTOs.cita.CitaResponseDTO;
+import com.salesianos.dam.clinicflow.entities.extra.DTOs.cita.CreateCitaRequestDTO;
 import com.salesianos.dam.clinicflow.services.CitaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -21,8 +22,8 @@ public class CitaController {
 
     /* -- CRUD -- */
     @PostMapping()
-    public ResponseEntity<CitaResponseDTO> create(CitaRequestDTO citaRequestDTO) {
-        Cita nuevoCita = service.create(citaRequestDTO.from());
+    public ResponseEntity<CitaResponseDTO> create(CreateCitaRequestDTO createCitaRequestDTO) {
+        Cita nuevoCita = service.create(createCitaRequestDTO.from());
         return ResponseEntity.status(201).body(CitaResponseDTO.to(nuevoCita));
     }
 
