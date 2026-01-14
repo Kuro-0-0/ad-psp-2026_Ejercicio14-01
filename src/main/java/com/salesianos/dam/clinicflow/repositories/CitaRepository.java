@@ -31,6 +31,9 @@ public interface CitaRepository extends JpaRepository<Cita, Long> {
     )
     List<Cita> findByPacienteAndFechaHora(Paciente paciente, LocalDateTime fechaHora);
 
+    List<Cita> findByFechaHoraBetween(LocalDateTime fechaHoraStart, LocalDateTime fechaHoraEnd);
+
+
     List<Cita> findByEstado(Estado estado);
 
     @EntityGraph(attributePaths = {"paciente"})
