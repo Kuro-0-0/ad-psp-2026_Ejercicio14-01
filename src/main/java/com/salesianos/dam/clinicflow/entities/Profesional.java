@@ -9,7 +9,7 @@ import lombok.*;
 @AllArgsConstructor @NoArgsConstructor
 @ToString @Getter @Setter
 @Builder
-public class Profesional {
+public class Profesional {  
 
     /*
     * id
