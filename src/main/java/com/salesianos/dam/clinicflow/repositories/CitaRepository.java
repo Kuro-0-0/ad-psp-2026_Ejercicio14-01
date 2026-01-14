@@ -30,4 +30,7 @@ public interface CitaRepository extends JpaRepository<Cita, Long> {
         "SELECT c FROM Cita c WHERE c.paciente = :paciente AND c.fechaHora = :fechaHora"
     )
     List<Cita> findByPacienteAndFechaHora(Paciente paciente, LocalDateTime fechaHora);
+
+    @EntityGraph(attributePaths = {"paciente"})
+    List<Cita> findByPaciente(Paciente paciente);
 }
