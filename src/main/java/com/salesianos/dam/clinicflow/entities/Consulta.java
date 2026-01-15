@@ -13,13 +13,6 @@ import java.time.LocalDate;
 @Builder
 public class Consulta {
 
-    /*
-    * id
-    * observaciones
-    * diagnostico
-    * fecha
-    * */
-
     @Id @GeneratedValue
     private Long id;
 

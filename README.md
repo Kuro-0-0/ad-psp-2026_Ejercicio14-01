@@ -1,5 +1,9 @@
 # ad-psp-2025_Ejercicio14-01
 
+## Enunciado del ejercicio
+[Enunciado](https://github.com/luismilopezedu/ad-psp-2025/blob/main/99_Ejercicios/Spring%20Data%20JPA/ClinicFlow-enunciado.md)
+
+
 ## F01 - Crear entidadess
 - F01.1 - Entidad Paciente
 - F01.2 - Entidad Profesional

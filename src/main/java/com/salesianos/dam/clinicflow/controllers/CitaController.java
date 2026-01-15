@@ -8,6 +8,8 @@ import com.salesianos.dam.clinicflow.entities.extra.DTOs.cita.CreateCitaRequestD
 import com.salesianos.dam.clinicflow.entities.extra.DTOs.consulta.CreateConsultaRequestDTO;
 import com.salesianos.dam.clinicflow.services.CitaService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -49,9 +51,9 @@ public class CitaController {
     /* -- EXTRAS -- */
 
     @GetMapping
-    public ResponseEntity<List<CitaResponseDTO>> getAll() {
+    public ResponseEntity<Page<CitaResponseDTO>> getAll(Pageable pageable) {
         return ResponseEntity.ok(
-                service.getAll().stream().map(CitaResponseDTO::to).toList()
+                service.getAll(pageable).map(CitaResponseDTO::to)
         );
     }
 

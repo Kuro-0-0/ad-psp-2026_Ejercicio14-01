@@ -13,13 +13,6 @@ import java.time.LocalDate;
 @Builder
 public class Paciente {
 
-    /*
-    * id
-    * nombre
-    * email
-    * fechaNacimiento
-    * */
-
     @Id @GeneratedValue
     private Long id;
 

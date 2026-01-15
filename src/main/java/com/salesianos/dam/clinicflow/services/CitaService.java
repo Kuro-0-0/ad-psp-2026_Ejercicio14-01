@@ -9,6 +9,8 @@ import com.salesianos.dam.clinicflow.exceptions.WrongEstadoArgumentException;
 import com.salesianos.dam.clinicflow.exceptions.notFound.CitaNotFoundException;
 import com.salesianos.dam.clinicflow.repositories.CitaRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -59,8 +61,8 @@ public class CitaService {
     }
 
     /* -- EXTRAS -- */
-    public List<Cita> getAll() {
-        return repository.findAll();
+    public Page<Cita> getAll(Pageable pageable) {
+        return repository.findAll(pageable);
     }
 
     public Cita cancelarCita(Long id) {

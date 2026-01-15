@@ -11,12 +11,6 @@ import lombok.*;
 @Builder
 public class Profesional {
 
-    /*
-    * id
-    * nombre
-    * especialidad
-    * */
-
     @Id @GeneratedValue
     private Long id;
 

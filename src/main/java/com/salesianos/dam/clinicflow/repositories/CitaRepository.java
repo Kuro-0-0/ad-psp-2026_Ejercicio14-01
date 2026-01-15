@@ -4,6 +4,8 @@ import com.salesianos.dam.clinicflow.entities.Cita;
 import com.salesianos.dam.clinicflow.entities.Paciente;
 import com.salesianos.dam.clinicflow.entities.Profesional;
 import com.salesianos.dam.clinicflow.entities.extra.Estado;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -33,6 +35,7 @@ public interface CitaRepository extends JpaRepository<Cita, Long> {
 
     List<Cita> findByFechaHoraBetween(LocalDateTime fechaHoraStart, LocalDateTime fechaHoraEnd);
 
+    Page<Cita> findAll(Pageable pageable);
 
     List<Cita> findByEstado(Estado estado);
 

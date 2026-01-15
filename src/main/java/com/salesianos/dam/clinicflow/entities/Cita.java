@@ -13,23 +13,18 @@ import java.time.LocalDateTime;
 @Builder
 public class Cita {
 
-    /*
-     * id
-     * fechaHora
-     * estado (PROGRAMADA, CANCELADA, ATENDIDA)
-     */
-
     @Id @GeneratedValue
     private Long id;
     private LocalDateTime fechaHora;
 
+    @Enumerated(EnumType.STRING)
     private Estado estado;
 
     @ManyToOne
     private Paciente paciente;
     @ManyToOne
     private Profesional profesional;
-    @ManyToOne
+    @OneToOne
     private Consulta consulta;
 
     public Cita modify(Cita c) {
